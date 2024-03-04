@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* body{
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364 );
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    } */
+</style>
+<body>
+    <!-- <h1>Welcome to your Dashboard Mr <span  id="username"></span ></h1>
+    <input type="text" id="title" placeholder="Title"><br><br> -->
+    
+</body>
+</html>
+<script>
+    let title = document.getElementById("title")
+    let reg= JSON.parse(localStorage.getItem("reg"))
+    console.log(reg);
+    if(reg == null){
+        alert("Please Try Again")
+        window.location.href="index.html"
+    }else{
+        username.innerHTML=`${username}`
+    }
+    username.innerHTML = reg.username;
+    console.log(reg)
+</script>
