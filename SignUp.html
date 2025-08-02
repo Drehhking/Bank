@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sign.css">
+</head>
+<body>
+    <div id="div">
+        <div id="input-control">
+            <img src="pocket-by-piggyvest-logo-604065851B-seeklogo.com.png" width="160px" height="40px" alt="">
+            <h1>Register Now</h1>
+        <Label>Firstname: </Label>
+        <input type="text" name="" id="input1"><br><br>
+        <label for="input2">Lastname: </label>
+        <input type="text" name="" id="input2"><br><br>
+        <label for="gender">Gender: </label>
+        <input type="text" name="" id="input3"><br><br>
+        <label for="input4">Email: </label>
+        <input type="email" name="email" id="input4" required><br><br>
+        <label for="input4">Date of Birth: </label>
+        <input type="date" name="date" id="input8" required><br><br>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="input5" required><br><br>
+        <button id="btn1" onclick="show()">show</button>
+        <label for="">Account Pin</label>
+        <input type="text" maxlength="4" name="" id="input6">
+        </div>
+        <button onclick="check(event)" id="btn">Sign Up</button>
+    </div>
+</body>
+</html>
+<script>
+    let Firstname = document.getElementById("input1")
+    let Lastname = document.getElementById("input2")
+    let Gender = document.getElementById("input3")
+    let Email = document.getElementById("input4")
+    let password = document.getElementById("input5")
+    let btn1 = document.getElementById("btn1")
+    let btn = document.getElementById("btn")
+    let cpass = document.getElementById('input6')
+    let Dob = document.getElementById("input8")
+    
+    function show(){
+        if(password.type === "password"){
+            password.type = "text";
+            btn1.innerHTML = "hide"
+        }else {
+            password.type = "password";
+            btn1.innerHTML = "show"
+        }
+        
+    }
+    // function check(event){
+    //     event.preventDefault();
+    //     if(password.value === cpass.value){
+    //         alert("Registration successful")
+    //     }else {
+    //         alert("Password does not match")
+    //     }
+    // }
+    
+//   if (localStorage.getItem("regarray") === null) {
+//        localStorage.setItem("regarray", "[]") 
+//     }
+  
+ function check(ev){
+    console.log(ev.target);
+    ev.preventDefault()
+    let Firstname =input1.value;
+    let Lastname =input2.value;
+    let Gender = input3.value;
+    let Email =input4.value;
+    let password =input5.value;
+    let no = input5.value;
+    let cpass = input6.value;
+    let Dob = input8.value
+ 
+ if (Firstname == "" || Lastname == "" || Email == "" || password == "" ) {
+    alert("input cannot be empty")
+ } else if (password.length < 9) {
+    alert("password cannot be less than 9 characters")
+ }else{
+    alert('Registration successful')
+    let signupdata = {
+        Firstname : input1.value,
+        Lastname : input2.value,
+        Gender : input3.value,
+        Email : input4.value,
+        Password : input5.value,
+        Amount : 5000.00,
+        Account_Number : Math.floor(Math.random()* 10000000000),
+        Account_pin : input6.value,
+        Dob : input8.value,
+        Bvn : "",
+        Nickname : "",
+        Profile : ""
+    }
+    fetch("http://localhost:2345/signUp", {
+        headers : {
+            "content-type" : "application/json"
+        },
+        method : "POST",
+        body : JSON.stringify(signupdata)
+    }).then((res)=> res.json()).then((data)=>{
+        window.location.href = "login2.html"
+        // console.log(data)
+    })
+
+    }
+ }
+</script>

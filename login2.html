@@ -18,7 +18,7 @@
             </div>
             <div id="input-control">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="********"><button id="btn1" onclick="show()">show</button>
+                <input type="password" name="password" id="password"><button id="btn1" onclick="show()">show</button>
                 <!-- <div id="error"></div> -->
             </div>
             <button type="submit" onclick="signIn()" id="btn">Login</button>
@@ -28,5 +28,43 @@
 </body>
 </html>
 <script>
-     
+    let email = document.getElementById("email");
+    let password = document.getElementById('password');  
+    function show(){
+        if(password.type == "password"){
+            password.type = "text";
+            btn1.innerHTML = "hide"
+        }else {
+            password.type = "password";
+            btn1.innerHTML = "show"
+        }
+        
+    }
+    function signIn(){
+        fetch("http://localhost:2345/signUp").then((res)=>res.json()).then((data)=>{
+            let userinfo = data.find(info => info.Password == password.value && info.Email == email.value)
+            console.log(userinfo.id);
+            if (userinfo) {
+                console.log("i am working");
+                let mylogininfo = {
+                    userid : userinfo.id
+                }
+                fetch("http://localhost:2345/login", {
+
+                    method : "POST",
+                    headers : {
+                         "content-type" : "application/json"
+                     },
+
+                     body : JSON.stringify(mylogininfo)
+                }).then((res) => res.json()).then((data)=>{
+                    alert("login successful")
+                    window.location.href = "dashboard.html"
+                })
+
+            }else{
+                alert("login failed")
+            }
+        })
+    }
 </script>

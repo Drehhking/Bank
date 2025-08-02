@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta placeholder="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart List</title>
+</head>
+<center>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+         margin-top: 20px;
+         overflow-y: auto;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            width: 100%;
+            height: 100%;
+            background-image: url(../landwey/car.jpeg);
+           
+            
+        }
+
+        #input1,#input2, #input3,table{
+            margin-top: 30px;
+            background: transparent;
+            outline: 0;
+            padding: 8px;
+        }
+        /* #display{
+            overflow-y: scroll;
+        } */
+
+     </style>
+     <body>
+
+          <div id="div1">
+            <h1 style="color: white;">GOJO's STORES</h1>
+            <input type="text" placeholder="Product"  id="input1"><br>
+            <input type="number" placeholder="Quantity" id="input2"><br>
+            <input type="number" placeholder="Price" id="input3"><br>
+            <button onclick="add_list()" style="background-color: orange; border: 0; padding: 7px;border-radius: 10px; margin-top: 5px; color: white;">Add to list</button><br>
+            <div id="display"></div>
+    
+            <table style="border: 2px solid black; border-collapse: collapse; padding: 12px;">
+                <thead>
+                    <th style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: orange; color: white; font-weight: 600;">Product</th>
+                    <th style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: orange; color: white; font-weight: 600;">Quantity</th>
+                    <th style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: orange; color: white; font-weight: 600;">Price per one</th>
+                    <th style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: orange; color: white; font-weight: 600;">Total Price</th>
+                    <th style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: orange; color: white; font-weight: 600;">Remove</th>
+                </thead>
+                <tbody style="border: 2px solid black;  border-collapse: collapse; padding: 12px;" id="tbody">
+                </tbody>
+            </table>
+          </div>
+     </body>
+     </html>
+     <script>
+         let tbody=document.getElementById('tbody')
+     
+         let cartList = []
+         function add_list() {
+             let cart = {
+                 Product: input1.value,
+                 Quantity: input2.value,
+                 Price: input3.value,
+             }
+     
+             cartList.push(cart)
+             console.log(cartList);
+             console.log(cart.Product);
+             console.log(cart.Quantity);
+             console.log(cart.Price);
+             tbody.innerHTML = ''
+     
+             show()
+         }
+     
+         function show(){
+             cartList.forEach(function ({Product,Quantity,Price}, a){
+                 tbody.innerHTML+=`<tr><td  style="border: 2px solid black;">${Product}</td><td  style="border: 2px solid black;">${Quantity}</td><td  style="border: 2px solid black;">${Price}</td><td  style="border: 2px solid black;">${Quantity*Price}</td> <td><button onclick="remove(${a})">Delete</button></td></tr>`
+             })
+         }
+
+         function remove(a) {
+
+            cartList.splice(a,1)
+            console.log(cartList);
+            tbody.innerHTML=''
+            show()
+         }
+
+     </script>
+</center>

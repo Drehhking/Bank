@@ -1,0 +1,33 @@
+.cardMid{
+    /* background-color: #8e1eff; */
+    background-image: url(Capture.PNG);
+    width: 25%;
+    padding: 10px 7px;
+    border-radius: 13px;
+    color: white;
+}
+
+.logo{
+    filter: brightness(0) invert(1);
+}
+.hrr{
+    display: flex;
+    justify-content: space-between;
+}
+.simCard{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nameee{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nameee h3{
+    background-color:  #EC352C;
+    width: 14px;
+    color: white;
+    border-radius: 100%;
+    padding: 1px;
+}

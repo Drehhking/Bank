@@ -1,33 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    /* body{
-        background: linear-gradient(to right, #0f2027, #203a43, #2c5364 );
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-    } */
-</style>
-<body>
-    <!-- <h1>Welcome to your Dashboard Mr <span  id="username"></span ></h1>
-    <input type="text" id="title" placeholder="Title"><br><br> -->
-    
-</body>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div>
+      
+    </div>
+    <div id="container">
+        <img id="image1" src="pocket-by-piggyvest-logo-604065851B-seeklogo.com.png" alt="">
+        <h4 onclick="home()">Dashboard</h4>
+        <h4 onclick="acc()">My Account</h4>
+        <h4 onclick="cardo()">Cards</h4>
+        <h4 onclick="fundTransfer()">Fund Transfer</h4>
+        <h4 onclick="bill()">Bill Payment</h4>
+        <h4 onclick="hstry()">Transactions</h4>
+        <h4>Settings</h4>
+
+    </div>
+    <!-- sidebar ends -->
+    <div id="container2">
+      <nav>
+          <div id="dd">
+            <h1>Hi, <h1>👋</h1><span id="username" style="font-size: 25px; font-weight: 700;"></span></h1>
+          </div>
+         <div id="go">
+          <button id="not" onclick="signOut()">Log out</button>
+          <!-- <button id="acct"><span class="material-symbols-outlined"> -->
+            <!-- account_circle -->
+            <!-- </span></button> -->
+         </div>
+      </nav>
+      <div id="container3">
+        <h3>Account Number : <span id="accountNumber"></span></h3>
+         <h5> <span class="material-symbols-outlined wallet">account_balance_wallet</span>Balance :</h5><br>
+          <span id="amount"></span>
+        <!-- <span class="nai">Naira</span>  -->
+          <h4>Available</h4>
+          <div class="vv rotate">
+            
+          </div>
+      </div>
+      <div id="container4">
+        <!-- <img src="bank-reserves-in-nigeria-in-2021-n-tn-.png" width="500px" height="350px" alt=""> -->
+        <figure>
+
+          <ul class="sparklist">
+                <li>
+                    <a href="http://www.example.com/fruits/apples/">Transfer</a>
+                  <span class="sparkline">
+                    <span class="index"><span class="count" style="height: 27%;">(60,</span> </span>
+                    <span class="index"><span class="count" style="height: 97%;">220,</span> </span>
+                    <span class="index"><span class="count" style="height: 62%;">140,</span> </span>
+                    <span class="index"><span class="count" style="height: 35%;">80,</span> </span>
+                    <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                    <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                    <span class="index"><span class="count" style="height: 80%;">180,</span> </span>
+                    <span class="index"><span class="count" style="height: 62%;">140,</span> </span>
+                    <span class="index"><span class="count" style="height: 53%;">120,</span> </span>
+                    <span class="index"><span class="count" style="height: 71%;">160,</span> </span>
+                    <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                    <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 56%;">125)</span> </span>
+                  </span>
+                </li>
+                <li>
+                  <a href="http://www.example.com/fruits/apples/">Savings</a>
+                  <span class="sparkline">
+                    <span class="index"><span class="count" style="height: 40%;">(90,</span> </span>
+                    <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                    <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                    <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                    <span class="index"><span class="count" style="height: 56%;">125,</span> </span>
+                    <span class="index"><span class="count" style="height: 67%;">150,</span> </span>
+                    <span class="index"><span class="count" style="height: 44%;">100,</span> </span>
+                    <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                    <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                    <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                    <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                    <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                    <span class="index"><span class="count" style="height: 56%;">125)</span> </span>
+                  </span>
+                </li>
+                <li>
+                  <a href="http://www.example.com/fruits/apples/">Airtime/Data</a>
+                  <span class="sparkline">
+                    <span class="index"><span class="count" style="height: 22%;">(75,</span> </span>
+                    <span class="index"><span class="count" style="height: 44%;">100,</span> </span>
+                    <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                    <span class="index"><span class="count" style="height: 35%;">80,</span> </span>
+                    <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                    <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                    <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                    <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                    <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                    <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                    <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                    <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                    <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                    <span class="index"><span class="count" style="height: 44%;">100)</span></span>
+                  </span>
+                </li>
+                <li>
+                   <a href="http://www.example.com/fruits/apples/">Betting</a>
+                  <span class="sparkline">
+                    <span class="index"><span class="count" style="height: 11%;">(25,</span> </span>
+                    <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                    <span class="index"><span class="count" style="height: 13%;">30,</span> </span>
+                    <span class="index"><span class="count" style="height: 8%;">20,</span> </span>
+                    <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                    <span class="index"><span class="count" style="height: 11%;">25,</span> </span>
+                    <span class="index"><span class="count" style="height: 16%;">35,</span> </span>
+                    <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                    <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                    <span class="index"><span class="count" style="height: 13%;">30,</span> </span>
+                    <span class="index"><span class="count" style="height: 8%;">20,</span> </span>
+                    <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                    <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                    <span class="index"><span class="count" style="height: 11%;">25)</span> </span>
+                  </span>
+                </li>
+              </ul>
+            <figcaption>Our Customers Payment/Servive Graph rankings.</figcaption>
+          </figure>
+    </div>
+      <div id="container5">
+          <h2>Meet Our Owners</h2>
+          <div id="dev1">
+            <img src="profile.jpg" width="50px" height="30px" style="border-radius: 100%;" alt=""> <span>Ahmed Richard</span><br>
+          </div>
+          <div id="dev2">
+            <img src="satoru.jpg" width="50px" height="30px" style="border-radius: 100%;" alt=""> <span>Gojo Satoru</span>
+          </div>
+      </div>
+      <div style="margin-top: -13%; margin-left: 57%;" id="contactus">
+        <img src="graph.jpg" width="450px" height="150px"  alt="">
+      </div>
+    <div id="container6">
+        <div id="coo">
+          <span class="material-symbols-outlined"> savings</span><p>Save</p>
+          <span class="material-symbols-outlined">account_balance_wallet</span><p>Spend</p>
+          <span class="material-symbols-outlined">real_estate_agent</span><p>Loan</p>
+        </div>
+        <div id="coo1">
+          <span class="material-symbols-outlined"> credit_card </span><p onclick="cardo()">Card</p>
+          <span class="material-symbols-outlined">payments</span><p onclick="deposit()">Deposit</p>
+          <span class="material-symbols-outlined">receipt_long</span><p>Statement</p>
+        </div>
+    </div>
+
+    <div id="bill">
+      <div class="inside_bill">
+        <h2>Bill Payment</h2>
+
+      <div id="bill_body">
+        <div class="sub">
+          <div class="airtime">
+            <span class="material-symbols-outlined">wifi</span>
+            <div class="wifi_icon">
+              <h4 onclick="airt()">Airtime</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">signal_cellular_alt</span>
+            <div class="wifi_icon">
+              <h4 onclick="dat()">Data</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">tv</span>
+            <div class="wifi_icon">
+              <h4>TV</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">emoji_objects</span>
+            <div class="wifi_icon">
+              <h4>Electricity</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">sports_soccer</span>
+            <div class="wifi_icon">
+              <h4>Betting</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">directions_bus</span>
+            <div class="wifi_icon">
+              <h4>Transportation</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">school</span>
+            <div class="wifi_icon">
+              <h4>Education</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">real_estate_agent</span>
+            <div class="wifi_icon">
+              <h4>Loan</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">credit_card</span>
+            <div class="wifi_icon">
+              <h4>ATM withdrawal</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+          <div class="airtime">
+            <span class="material-symbols-outlined">support_agent</span>
+            <div class="wifi_icon">
+              <h4>Customer Care</h4>
+              <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+    <div id="buy_airtime">
+      <div class="general_airtime">
+        <div class="inside_airtime">
+          <h1>Buy Airtime</h1>
+          <div class="sub_div">
+             <div class="list_div">
+              <label for="" >Network*</label>
+              <select name="" id="network">
+                <option>Select Network</option>
+                <option value="MTN">MTN</option>
+                <option value="Airtel">Airtel</option>
+                <option value="9mobile">9mobile</option>
+                <option value="Glo">Glo</option>
+              </select>
+             </div>
+             <div class="list_div">
+              <label for="">Mobile Number*</label>
+              <input type="number" id="mobile_number">
+             </div>
+             <div class="list_div">
+              <label for="">Amount</label>
+              <input type="number" type="number" id="amount1">
+             </div>
+             <div class="list_div1">
+              <input class="check" type="checkbox">
+              <label for="">bypass number validator</label>
+             </div>
+             <div class="list_div">
+              <button onclick="buyAirtime()">Buy</button>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="buy_airtim1">
+      <div class="general_airtime">
+        <div class="inside_airtime">
+          <h1>Buy Data Plan</h1>
+          <div class="sub_div">
+             <div class="list_div">
+              <label for="" id="">Network*</label>
+              <select name="" id="network2">
+                <option value="">Select Network</option>
+                <option value="MTN">MTN</option>
+                <option value="Airtel">Airtel</option>
+                <option value="9mobile">9mobile</option>
+                <option value="Glo">Glo</option>
+              </select>
+             </div>
+             <div class="list_div">
+              <label for="">Mobile Number*</label>
+              <input type="text" type="number" id="mobile_num">
+             </div>
+             <div class="list_div">
+              <label for="">Data Plan</label>
+              <select id="data1">
+                <option>Select a Data Plan</option>
+                <option value="200">500mb @ # 200</option>
+                <option value="350">1.0GB @ # 350</option>
+                <option value="500">2.0GB @ # 500</option>
+                <option value="600">2.5GB @ # 600</option>
+                <option value="1500">6GB @ # 1500</option>
+                <option value="3000">10GB @ # 3000</option>
+              </select>
+             </div>
+             <div class="list_div1">
+              <input class="check" type="checkbox">
+              <label for="">bypass number validator</label>
+             </div>
+             <div class="list_div">
+              <button onclick="buyData()">Buy</button>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal">
+      <div id="modal_input">
+        <div class="modal_pin">
+          <div class="main_modal">
+            <h2>Confirm your Payment</h2>
+            <div class="fee">
+              <p>Total Airtime fee</p>
+              <h5># <span id="airt_amt1"></span>.00</h5>
+            </div>
+            <div class="to_pay">
+                <p>Total amount to be paid</p>
+                <h5># <span id="airt_amt"></span>.00</h5>
+            </div>
+            <div class="to_pay vaa">
+              <p>Transfer:</p>
+              <h5><span id="">Account Balance</span></h5>
+          </div>
+          <div class="trans_pin">
+            <p>Input your Transaction Pin.</p>
+          </div>
+          <div id="pin_trans">
+            <input onkeyup="typeit()" type="text" maxlength="1" id="inp1" class="input1">
+            <input onkeyup="typeit()" type="text" maxlength="1" id="inp2"  class="input1">
+            <input onkeyup="typeit()" type="text" maxlength="1" id="inp3" class="input1">
+            <input onkeyup="typeit()" type="text" maxlength="1" id="inp4"  class="input1">
+          </div>
+          <div class="pay_buttons">
+              <button class="conf cancel" onclick="canCel()">cancel</button>
+              <button class="conf" onclick="confam()" id="theAirt">Confirm</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal1">
+      <div id="modal_input">
+        <div class="modal_pin">
+          <div class="main_modal">
+            <h2>Confirm your Payment</h2>
+            <div class="fee">
+              <p>Total Airtime fee</p>
+              <h5># <span id="airt_amt2"></span>.00</h5>
+            </div>
+            <div class="to_pay">
+                <p>Total amount to be paid</p>
+                <h5># <span id="airt_amt3"></span>.00</h5>
+            </div>
+            <div class="to_pay vaa">
+              <p>Transfer:</p>
+              <h5><span id="">Account Balance</span></h5>
+          </div>
+          <div class="trans_pin">
+            <p>Input your Transaction Pin.</p>
+          </div>
+          <div id="pin_trans">
+            <input onkeyup="typeitt()" type="text" maxlength="1" id="inp11" class="input1">
+            <input onkeyup="typeitt()" type="text" maxlength="1" id="inp22"  class="input1">
+            <input onkeyup="typeitt()" type="text" maxlength="1" id="inp33" class="input1">
+            <input onkeyup="typeitt()" type="text" maxlength="1" id="inp44"  class="input1">
+          </div>
+          <div class="pay_buttons">
+              <button class="conf cancel" onclick="canCell()">cancel</button>
+              <button class="conf" onclick="confamm()" id="theAirt">Confirm</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="transaction_history">
+      <div id="boru">
+        <div class="name_trans">
+          <h1>Transaction History</h1>
+        </div>
+        <div id="mid">
+          <table style="border: 2px solid black; border-collapse: collapse; padding: 12px;">
+            <thead>
+              <td style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: #d1d1d1; color: black; font-weight: 600;">Name</td>
+              <td style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: #d1d1d1; color: black; font-weight: 600;">Transaction Type</td>
+              <td style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: #d1d1d1; color: black; font-weight: 600;">Date</td>
+              <td style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: #d1d1d1; color: black; font-weight: 600;">Time</td>
+              <td style="border: 2px solid black; border-collapse: collapse; padding: 12px; background-color: #d1d1d1; color: black; font-weight: 600;">Amount</td>
+            </thead>
+            <tbody  style="border: 2px solid #d1d1d1;  border-collapse: collapse; padding: 12px; background-color: #0F1220; color: white;" id="tbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+
+    <div id="sendTo">
+      <h1>Send to pocket user</h1>
+      <div id="sendToo">
+        <div class="rec">
+          <h2>Send to recepient account</h2>
+        </div>
+        <div class="input-boxes">
+          <input id="tt" onkeyup="findUser()" type="text" placeholder="account number">
+        </div>
+        <div class="general_name">
+          <div id="nameDisplay">
+            <p id="fty"></p>
+          </div>
+        </div>
+        <div class="proceed">
+          <button onclick="proceedNow()">Next</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="send2">
+
+    </div> -->
+    <div id="transferUser">
+      <div id="small_transfer">
+        <div id="inside_transfer">
+            <h3 onclick="pocket()">Transfer To Pocket User</h3>
+        </div>
+        <div id="inside_transfer">
+          <h3 onclick="via1()">Transfer To other banks</h3>
+        </div>
+        <div id="inside_transfer">
+          <h3>Transfer via USSD</h3>
+        </div>
+      </div>
+    </div>
+    <div id="card_page">
+      <div id="moving">
+        <marquee  id="move" behavior="scroll" direction="left">
+          Note: Get a virtual card for FREE!! , visit any of our retail outlet to print your physical card , users who havent gotten a virtual card won't be able to get a physical one
+        </marquee>
+       </div> 
+      <div id="cards">
+        <img src="verve card.png" width="50%" alt="">
+        <img src="cards.png" width="50%"  alt="">
+      </div>
+      <div>
+        <button id="bstn" onclick="bstn()">Get a virtual card</button>
+      </div>    
+    </div>
+   <div id="jjb">
+    <div class="cardPage">
+      <div class="cardMid">
+          <div class="cardContent">
+              <div class="hrr">
+              <span id="cardName"></span>
+              <img class="logo" src="pocket-by-piggyvest-logo-604065851B-seeklogo.com.png" width="30%" height="20%">
+              </div>
+              <div class="simCard">
+                  <span id="cardNumber"></span>
+                  <img src="download (2).png" alt="" width="18%">
+              </div>
+              <div class="nameee">
+                  <span id="username"></span>
+                  <h3>Verve</h3>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  </div>
+  <div id="next_transfer">
+    <div class="in_next">
+      <div class="mgh">
+        <img src="bank-icon-logo-design-vector.jpg" width="20%" style="border-radius: 100%;" alt="">
+      </div>
+      <div class="okay">
+        <h3>Transfer to pocket account</h3>
+      </div>
+      <div id="okay_div">
+
+      </div>
+      <div id="divInput">
+        <label for="" class="mnf">Amount</label>
+      </div>
+      <div id="divInput">
+        <input type="number" id="hid" type="text">
+      </div>
+      <div id="divInput">
+        <label for="" class="mnf">Narration</label>
+      </div>
+      <div id="divInput">
+        <input id="hid1" type="text">
+      </div>
+      <div id="divInput1">
+        <button id="vu" onclick="con()">Confirm</button>
+      </div>
+    </div>
+    </div>
+
+    <div id="transferUserA">
+      <div id="small_transferA">
+        <div id="inside_transferA">
+            <h3 onclick="confirmDeposit()">Deposit via Flutterwave</h3>
+        </div>
+        <div id="inside_transferA">
+          <h3 >Deposit via Bank Transfer</h3>
+        </div>
+        <div id="inside_transferA">
+          <h3 onclick="via()">Deposit via Pocket Agent</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="next_transferA">
+      <div class="in_nextA">
+        <div class="mghA">
+          <img src="flutter.png" width="20%" style="border-radius: 100%;" alt="" >
+        </div>
+        <div class="okayA">
+          <h3>Depositing via Flutterwave</h3>
+        </div>
+        <div id="okay_divA">
+        </div>
+        <div id="divInputA">
+          <label for="" class="mnfA">Amount</label>
+        </div>
+        <div id="divInputA">
+          <input id="hidA" type="text">
+        </div>
+        <div id="divInput12">
+          <button type="button" id="vuA" onclick="makePayment()">Confirm</button>
+        </div>
+      </div>
+      </div>
+
+      <div id="profilePage">
+        <div id="insideProfile">
+          <div id="img_div">
+            <img src="" id="image" width="120px" height="100px" style="border-radius: 100%;" alt="">
+          </div>
+          <div id="update_button">
+            <button id="editButton" onclick="updatePic()">Update Profile Picture</button>
+          </div>
+          <div id="inner">
+            <div>
+              <h4 class="namu">Firstname</h4>
+            </div>
+            <div id="profileContent">
+              <div class="edit">
+                <h4 id="Id1"></h4>
+                <!-- <button id="editButton">edit</button> -->
+              </div>
+            </div>
+            <div>
+              <h4  class="namu">Lastname</h4>
+            </div>
+            <div id="profileContent">
+              <div class="edit">
+                <h4 id="Id2"></h4>
+                <!-- <button id="editButton">edit</button> -->
+              </div>
+            </div>
+            <div>
+              <h4  class="namu">Email Address</h4>
+            </div>
+            <div id="profileContent">
+              <div class="edit">
+                <h4 id="Id3"></h4>
+                <!-- <button id="editButton">edit</button> -->
+              </div>
+            </div>
+            <div>
+              <h4  class="namu">Gender</h4>
+            </div>
+            <div id="profileContent">
+              <div class="edit">
+                <h4 id="Id4"></h4>
+                <!-- <button id="editButton">edit</button> -->
+              </div>
+            </div>
+            <div>
+              <h4  class="namu">Date of birth</h4>
+            </div>
+            <div id="profileContent">
+              <div class="edit">
+                <h4 id="Id5"></h4>
+                <!-- <button id="editButton">Add / edit</button> -->
+              </div>
+            </div>
+            <div>
+              <h4  class="namu">BVN</h4>
+            </div>
+            <div id="profileContent">
+              <div class="edit">
+                <h4 id="bvnWord"></h4>
+                <button onclick="bvn()" id="editButton">Add / edit</button>
+              </div>
+            </div>
+            <div>
+              <h4  class="namu">KYC level</h4>
+            </div>
+            <div id="profileContent">
+              <div class="edit">
+                <h4>Tier 1</h4>
+              </div>
+            </div>
+            <div>
+              <h4  class="namu">Nickname</h4>
+            </div>
+            <div id="profileContent">
+              <div class="edit">
+                <h4 id="bvnOk"></h4>
+                <button id="editButton" onclick="nickname()">Add / edit</button>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div id="modal_profile1">
+          <div class="inside-modal-profile">
+            <div id="editdiv">
+              <div id="editsmall">
+                <div id="ptag">
+                  <p id="tagp">Edit Your Nickname</p>
+                </div>
+                <div id="bvnEdit">
+                  <div class="bvn">
+                    <h4>Nickname</h4>
+                  </div>
+                  <div class="bvnInput">
+                    <p> Example : @John Doe</p>
+                  </div>
+                </div>
+                <div id="bvnEdit1">
+                  <div class="bvn">
+                    <h4>Nickname</h4>
+                  </div>
+                  <div>
+                    <input id="bvnInput11" maxlength="11" type="text">
+                  </div>
+                </div>
+                <div class="pay_buttons1">
+                  <button class="conf cancel" onclick="canCeL1()">Cancel</button>
+                  <button class="conf" onclick="changeNickname()">Confirm</button>
+                </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          <div id="modal_profile">
+            <div class="inside-modal-profile">
+              <div id="editdiv">
+                <div id="editsmall">
+                  <div id="ptag">
+                    <p id="tagp">Edit your BVNr</p>
+                  </div>
+                  <div id="bvnEdit">
+                    <div class="bvn">
+                      <h4>BVN</h4>
+                    </div>
+                    <div class="bvnInput">
+                      <p> Example : 4653653561</p>
+                    </div>
+                  </div>
+                  <div id="bvnEdit1">
+                    <div class="bvn">
+                      <h4>BVN</h4>
+                    </div>
+                    <div>
+                      <input id="bvnInput1" maxlength="11" type="text">
+                    </div>
+                  </div>
+                  <div class="pay_buttons1">
+                    <button class="conf cancel" onclick="canCeL()">Cancel</button>
+                    <button class="conf" onclick="changeBvn()">Confirm</button>
+                  </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <div id="modal_profile11">
+          <div class="inside-modal-profile">
+            <div id="editdiv">
+              <div id="editsmall">
+                <div id="ptag1">
+                  <p id="tagp" style="font-weight: bold;">Add your profile picture</p>
+                </div>
+                <!-- <div id="bvnEdit"> -->
+                  <!-- <div class="bvn"> -->
+                    <!-- <h4></h4> -->
+                  <!-- </div> -->
+                  <!-- <div class="bvnInput"> -->
+                    <!-- <p> Example : @John Doe</p> -->
+                  <!-- </div> -->
+                <!-- </div> -->
+                <div id="bvnEdit1">
+                  <div class="bvn">
+                    <h4>Choose your Profile Picture</h4>
+                  </div>
+                  <div class="file">
+                   <input class="file1" onchange="changeImg()" type="file" name="file" id="imageforprofile">
+                  </div>
+                </div>
+                <div class="pay_buttons1">
+                  <button class="conf cancel" onclick="canCeL1()">Cancel</button>
+                  <button class="conf" onclick="changeProfilepic()">Confirm</button>
+                </div>
+              </div>
+          </div>
+          </div>
+          </div>
+
+
+    <div id="modal11">
+      <div id="modal_input">
+        <div class="modal_pin">
+          <div class="main_modal">
+            <h2>Confirm your Payment</h2>
+            <div class="fee">
+              <p>Total Transfer fee</p>
+              <h5># <span id="trans_amt1"></span>.00</h5>
+            </div>
+            <div class="to_pay">
+                <p>Total amount to be paid</p>
+                <h5># <span id="trans_amt2"></span>.00</h5>
+            </div>
+            <div class="to_pay vaa">
+              <p>Transfer:</p>
+              <h5><span id="">Account Balance</span></h5>
+          </div>
+          <div class="trans_pin">
+            <p>Input your Transaction Pin.</p>
+          </div>
+          <div id="pin_trans">
+            <input onkeyup="typeitt1()" type="text" maxlength="1" id="inp111" class="input1">
+            <input onkeyup="typeitt1()" type="text" maxlength="1" id="inp222"  class="input1">
+            <input onkeyup="typeitt1()" type="text" maxlength="1" id="inp333" class="input1">
+            <input onkeyup="typeitt1()" type="text" maxlength="1" id="inp444"  class="input1">
+          </div>
+          <div class="pay_buttons">
+              <button class="conf cancel" onclick="canCelll()">cancel</button>
+              <button class="conf" onclick="transConfirm()" id="transConfirm">Confirm</button>
+          </div>
+    </div>
+   </div>
+  
+  </body>
 </html>
-<script>
-    let title = document.getElementById("title")
-    let reg= JSON.parse(localStorage.getItem("reg"))
-    console.log(reg);
-    if(reg == null){
-        alert("Please Try Again")
-        window.location.href="index.html"
-    }else{
-        username.innerHTML=`${username}`
-    }
-    username.innerHTML = reg.username;
-    console.log(reg)
-</script>
+<script src="dashboard.js"></script>
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<!-- <script src="home.js"></script> -->
+ 
